@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app="Demo">
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+        Modal Window service for Bagyourjob
+    </title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="tuto.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./demo.css"></link>
+</head>
+<body ng-controller="AppController">
+
+    <h1>
+        Creating A Simple Modal System In AngularJS
+    </h1>
+
+    <ul>
+        <li>
+            <a ng-click="alertSomething()">Alert something</a>
+        </li>
+        <li>
+            <a ng-click="confirmSomething()">Confirm something</a>
+        </li>
+        <li>
+            <a ng-click="promptSomething()">Prompt something</a>
+        </li>
+    </ul>
+    <div
+        bn-modals
+        ng-show="subview"
+        class="m-modals"
+        ng-switch="subview">
+
+        <!-- BEGIN: Alert Modal. -->
+        <div
+            ng-switch-when="alert"
+            ng-controller="AlertModalController"
+            class="modal">
+
+            <p>
+                {{ message }}
+            </p>
+
+            <p>
+                <a ng-click="close()">Ok, I got it!</a>
+            </p>
+
+            <!-- This is to demonstrate that we can jump from one modal to another. -->
+            <p>
+                <a ng-click="jumpToConfirm()" class="jump">Jump over to the confirm modal</a>
+            </p>
+
+        </div>
+        <!-- END: Alert Modal. -->
+    </div>
+</body>
+</html>

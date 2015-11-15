@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="Demo">
+<head>
+    <meta charset="utf-8" />
+
+    <title>
+        Modal Window service for Bagyourjob
+    </title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="modal.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="demo.css"></link>
+</head>
+<body ng-controller="AppController">
+
+    <h1>
+        Campus Hire
+    </h1>
+
+    <ul>
+            <p ng-click="alertSomething()">Export to Excel</p>
+    </ul>
+    <modal-alert ng-show="subview" ng-switch="subview" class="m-modals" ></modal-alert>
+    </div>
+</body>
+</html>
